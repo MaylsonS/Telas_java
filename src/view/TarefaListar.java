@@ -13,6 +13,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 
 import model.ButtonRenderer;
+import model.DataPrazoRender;
 import model.ButtonEditor;
 
 import javax.swing.JScrollPane;
@@ -78,8 +79,8 @@ public class TarefaListar extends JFrame {
 		));	
 		
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
-		model.addRow(new Object[] { "Estudar Java", "2025-07-20", "Descricao do negocio", "Pendente", "0" });
-		model.addRow(new Object[] { "Entregar Projeto", "2025-07-22", "Descricao do negocio", "Pendente", "5" });
+		model.addRow(new Object[] { "Estudar Java", "23-07-2025", "Descricao do negocio", "Pendente", "0" });
+		model.addRow(new Object[] { "Entregar Projeto", "18-07-2025", "Descricao do negocio", "Pendente", "5" });
 
 		
 		table.getColumn("Editar").setCellRenderer(new ButtonRenderer("Editar"));
@@ -109,6 +110,8 @@ public class TarefaListar extends JFrame {
 			tarefaListar.setLocationRelativeTo(null);
 			tarefaListar.setVisible(true);
 		});
+		
+		table.getColumn("Data").setCellRenderer(new DataPrazoRender());
 
 
 	}

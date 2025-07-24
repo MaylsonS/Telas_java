@@ -16,9 +16,6 @@ public class SubTarefa extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -33,9 +30,7 @@ public class SubTarefa extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public SubTarefa() {
 		setTitle("SubTarefa");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -73,6 +68,10 @@ public class SubTarefa extends JFrame {
 		JButton btnListar = new JButton("Listar");
 		btnListar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
+				SubTarefaListar subLista = new SubTarefaListar();
+				subLista.setVisible(true);
+				subLista.setLocationRelativeTo(null);
 			}
 		});
 		btnListar.setFont(new Font("Times New Roman", Font.PLAIN, 16));

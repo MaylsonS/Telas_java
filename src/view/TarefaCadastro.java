@@ -89,7 +89,7 @@ public class TarefaCadastro extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String titulo = textFieldCadastrar.getText().trim();
-				String data = textFieldData.getText().trim() ;
+				String data = textFieldData.getText().trim();
 				String prioridadeTexto = textFieldPrioridade.getText().trim();
 				
 				if(titulo.isEmpty() || titulo.equalsIgnoreCase(" ") || data.isEmpty() || data.equalsIgnoreCase(" ") ||
@@ -104,13 +104,19 @@ public class TarefaCadastro extends JFrame {
 					
 					LocalDate date = LocalDate.parse(data,dataFormatada);
 					
+					if (date.isBefore(LocalDate.now())) {
+				        JOptionPane.showMessageDialog(btnNewButton, 
+				            "Não é possível cadastrar uma tarefa com uma data no passado.",
+				            "Data inválida", 
+				            JOptionPane.WARNING_MESSAGE);
+				        return;
+				    }
+					
 				}catch(DateTimeParseException ex) {
-					JOptionPane.showMessageDialog(btnNewButton, "A data precisa esta no formato AAAA-MM-DD aaaaaa", "Formato Invalido",
+					JOptionPane.showMessageDialog(btnNewButton, "A data precisa esta no formato DD-MM-YYYY", "Formato Invalido",
 							JOptionPane.WARNING_MESSAGE);
 					return;
 				}
-				
-				
 				
 				try {
 					int prioridade = Integer.parseInt(prioridadeTexto);

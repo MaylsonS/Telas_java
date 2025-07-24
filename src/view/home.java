@@ -32,8 +32,7 @@ public class home extends JFrame {
 				}
 			}
 		});
-	}
-
+	} 
 	/**
 	 * Create the frame.
 	 */

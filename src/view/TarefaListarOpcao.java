@@ -8,6 +8,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TarefaListarOpcao extends JFrame {
 
@@ -40,7 +42,7 @@ public class TarefaListarOpcao extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
-		panel.setBounds(46, 11, 335, 220);
+		panel.setBounds(41, 11, 335, 220);
 		contentPane.add(panel);
 		
 		JLabel lblListagemDeTarefas = new JLabel("Listagem de Tarefas");
@@ -61,10 +63,28 @@ public class TarefaListarOpcao extends JFrame {
 		
 		
 		JButton btnTarefasCriticas = new JButton("Criticas");
+		btnTarefasCriticas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TarefaListaCritica criticas = new TarefaListaCritica();
+				dispose();
+				criticas.setVisible(true);
+				criticas.setLocationRelativeTo(null);
+				
+				
+			}
+		});
 		btnTarefasCriticas.setBounds(122, 119, 95, 29);
 		panel.add(btnTarefasCriticas);
 		
 		JButton btnPorDia = new JButton("Por Dia");
+		btnPorDia.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				TarefaListarDia TarefaDia = new TarefaListarDia();
+				TarefaDia.setVisible(true);
+				TarefaDia.setLocationRelativeTo(null);
+			}
+		});
 		btnPorDia.setBounds(239, 119, 86, 29);
 		panel.add(btnPorDia);
 		
