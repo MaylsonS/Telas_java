@@ -33,9 +33,7 @@ public class home extends JFrame {
 			}
 		});
 	} 
-	/**
-	 * Create the frame.
-	 */
+	
 	public home() {
 		setTitle("home");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -96,7 +94,6 @@ public class home extends JFrame {
 			}
 			
 		});
-		
 		
 		btnEvento.setBounds(192, 125, 80, 29);
 		panel.add(btnEvento);
