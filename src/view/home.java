@@ -64,7 +64,7 @@ public class home extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				Tarefa tarefa = new Tarefa();
+				TarefaPrincipal tarefa = new TarefaPrincipal();
 				tarefa.setLocationRelativeTo(null);
 				tarefa.setVisible(true);
 				
@@ -73,13 +73,13 @@ public class home extends JFrame {
 		btnNewButton.setBounds(10, 125, 80, 29);
 		panel.add(btnNewButton);
 		
-		JButton btnSubtarefa = new JButton("SubTarefa");
+		JButton btnSubtarefa = new JButton("Exportar");
 		btnSubtarefa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				SubTarefa subt = new SubTarefa();
-				subt.setLocationRelativeTo(null);
-				subt.setVisible(true);
+				Exportar exportar = new Exportar();
+				exportar.setLocationRelativeTo(null);
+				exportar.setVisible(true);
 			}
 			
 		});

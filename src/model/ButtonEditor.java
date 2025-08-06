@@ -26,7 +26,7 @@ public class ButtonEditor extends DefaultCellEditor {
                 fireEditingStopped(); // necessário pro editor funcionar direito
                 if (label.equals("Editar")) {
                     String titulo = table.getValueAt(row, 0).toString(); // pega o título da tarefa
-                    JOptionPane.showMessageDialog(button, "Editar: " + titulo);
+                    JOptionPane.showConfirmDialog(button, "Editar: " + titulo);
                     // aqui depois vai abrir a tela de edição
                 } else if (label.equals("Apagar")) {
                     String titulo = table.getValueAt(row, 0).toString();
